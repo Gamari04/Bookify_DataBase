@@ -25,24 +25,36 @@ CREATE TABLE Reservation (
     id int  PRIMARY KEY AUTO_INCREMENT,
     Salle_id int,
     Employe_id int,
-    Date_Debut DATE,
-    Date_Fin DATE,
+    Date_Debut DATETIME,
+    Date_Fin DATETIME,
     FOREIGN KEY (Salle_id) REFERENCES Salle(id),
     FOREIGN KEY (Employe_id) REFERENCES Employe(id)
 );
-ALTER TABLE departement
-MODIFY COLUMN id int  PRIMARY KEY AUTO_INCREMENT;
 
-ALTER TABLE Equipement
-MODIFY COLUMN id int  PRIMARY KEY AUTO_INCREMENT;
+INSERT INTO Departement (id, Nom)
+VALUES
+(1,'Comptabilite');
+(2,'Finance');
 
-ALTER TABLE Salle
-MODIFY COLUMN id int  PRIMARY KEY AUTO_INCREMENT;
+INSERT INTO Equipement (id, Nom)
+VALUES
+(1,'des ordinateurs');
+(2,'des tableaux');
 
-ALTER TABLE Employe
-MODIFY COLUMN id int  PRIMARY KEY AUTO_INCREMENT;
+INSERT INTO Employe (id, Nom, Email, Departement_id)
+VALUES
+(1,'Salma','salmaelgmiri04@gmail.com',1);
+(2,'Omar','omarelgmiri04@gmail.com',1);
 
-ALTER TABLE Reservation
-MODIFY COLUMN id int  PRIMARY KEY AUTO_INCREMENT;
+INSERT INTO Salle (id, Nom, Capacite, Equipement_id)
+VALUES
+(1,'reunion',10,1)
+(2,'debrifing',10,1)
+
+INSERT INTO Reservation (id, Salle_id, Employe_id, Date_Debut, Date_Fin)
+VALUES
+(1, 1, 1, 2023-11-19 13:00:00, 2023-11-19 15:00:00),
+(2, 2, 2, 2023-11-20 16:00:00, 2023-11-20 18:00:00),
+(3, 3, 3, 2023-11-23 12:00:00, 2023-11-23 16:00:00);
 
 
