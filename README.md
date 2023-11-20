@@ -41,3 +41,5 @@ class Équipements {
   + Id: int
   + Nom: string
 }
+## Trello
+https://trello.com/b/b9jGq3eR/brief5-squad2
