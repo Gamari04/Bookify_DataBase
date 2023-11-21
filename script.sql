@@ -1,3 +1,4 @@
+-- Active: 1700496060394@@127.0.0.1@3306
 create database system_reservation;
 CREATE TABLE Departement (
     id int  PRIMARY KEY AUTO_INCREMENT,
@@ -76,3 +77,15 @@ FROM Reservation
 JOIN Salle ON Reservation.Salle_id = Salle.id
 JOIN Employe ON Reservation.Employe_id = Employe.id;
 
+UPDATE Employe
+SET Nom = 'ilham'
+WHERE id=1;
+
+DELETE FROM Salle
+WHERE Nom='reunion';
+
+ALTER TABLE Reservation
+MODIFY COLUMN Date_Debut DATETIME;
+
+ALTER TABLE Reservation
+MODIFY COLUMN Date_Fin DATETIME;
